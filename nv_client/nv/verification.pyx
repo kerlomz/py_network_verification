@@ -51,6 +51,9 @@ def validate(func):
                 messagebox.showinfo(title='错误', message='此版本已过期或未授权, 错误码: {}'.format(msg))
                 sys.exit(-999)
         except Exception:
+            tk = kwargs.get("parent")
+            if tk:
+                tk.withdraw()
             messagebox.showinfo(title='错误', message='此版本已过期或未授权, 错误码: no connection!')
             sys.exit(-990)
     return wrapper
