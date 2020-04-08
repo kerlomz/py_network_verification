@@ -64,7 +64,7 @@ if __name__ == '__main__':
     server_host = "0.0.0.0"
     auth_logger = logging.getLogger(__name__ + "__auth__")
     auth_logger.setLevel(level=logging.INFO)
-    auth_handler = logging.FileHandler("auth_log.txt")
+    auth_handler = logging.FileHandler("grpc_server.log")
     auth_stream_handler = logging.StreamHandler()
     auth_handler.setLevel(logging.INFO)
     auth_logger.addHandler(auth_handler)
