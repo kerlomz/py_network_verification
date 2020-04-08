@@ -8,7 +8,7 @@ import base64
 import random
 import hashlib
 from crypto_utils import AESCipher, TripleDES, RSACipher
-from constants import AES_KEY, DES3_KEY, PUBLIC_KEY, PRIVATE_KEY
+from constants import AES_KEY, DES3_KEY, PUBLIC_KEY, PRIVATE_KEY, SPLIT_FLAG
 
 
 even_aes = AESCipher(DES3_KEY)
@@ -18,6 +18,8 @@ decrypt_rsa = RSACipher("", PRIVATE_KEY)
 
 
 class Core:
+
+    split_flag = SPLIT_FLAG.encode("utf8")
 
     @classmethod
     def gen_tag(cls):
@@ -58,6 +60,18 @@ class Core:
             ).encode('utf8')).hexdigest().encode("utf8")
         ).decode()
         return auth_code[:6] + auth_code[-10:]
+
+    @classmethod
+    def extract(cls, machine_code):
+        first_step = machine_code.replace(")", "1").replace("{", "9").replace("&", "E").replace("%", "b").replace("\\", "=")[::-1]
+        try:
+            second_step: bytes = base64.b64decode(odd_aes.decrypt(first_step)[:-21])
+        except Exception as e:
+            return "FAKE_{}".format(e)
+        if Core.split_flag not in second_step:
+            return "FAKE_{}".format("VER ERROR")
+        board_id, bios_id = second_step.split(Core.split_flag)
+        return board_id.decode(), bios_id.decode()
 
     def encode(self, params: dict):
         try:

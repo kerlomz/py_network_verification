@@ -1,3 +1,6 @@
 pycrypto
 grpcio
 grpcio_tools
+flask
+gevent
+gevent-websocket
