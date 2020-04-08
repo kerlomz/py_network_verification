@@ -4,6 +4,7 @@
 
 
 import time
+import json
 from concurrent import futures
 import logging
 import grpc
@@ -27,11 +28,11 @@ class Verification(backend_pb2_grpc.VerificationServicer):
 
     def verification(self, request, context):
         resp = {"success": False, "message": "failure"}
-        print(request.key)
+        # print(request.key)
         try:
             params = self.core.decode(request.key)
             status, msg = self.core.verify(params)
-            print(params)
+            auth_logger.info(json.dumps(params, ensure_ascii=False))
             resp = {"success": status, "message": msg}
             return backend_pb2.VerificationResult(
                 result=self.core.encode(resp)
