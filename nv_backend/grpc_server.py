@@ -7,6 +7,7 @@ import time
 import json
 from concurrent import futures
 import logging
+import datetime
 import grpc
 import backend_pb2
 import backend_pb2_grpc
@@ -32,7 +33,10 @@ class Verification(backend_pb2_grpc.VerificationServicer):
         try:
             params = self.core.decode(request.key)
             status, msg = self.core.verify(params)
-            auth_logger.info(json.dumps(params, ensure_ascii=False))
+            auth_logger.info("{} - {}".format(
+                datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'),
+                json.dumps(params, ensure_ascii=False))
+            )
             resp = {"success": status, "message": msg}
             return backend_pb2.VerificationResult(
                 result=self.core.encode(resp)
