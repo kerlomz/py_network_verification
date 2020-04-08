@@ -1,0 +1,10 @@
+
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# Author: kerlomz <kerlomz@gmail.com>
+
+SPLIT_FLAG = "|'''--''?\\%&SPLIT_FLAG&%\\?''--'''|"
+AES_KEY = '123456'
+DES3_KEY = '123456'
+PUBLIC_KEY = '-----BEGIN RSA PUBLIC KEY-----\nMIGJAoGBAIOf9BnreOF5Fyqsc6QJ/It6Zx3FzKK5ElgZ4iejr08iJpxPIYQ/Ibs/\nJzTJuzV3oOgDtX4jMEd5qWByDBx0Hz8qTlOYyvh2b+VauHqQfIzuAm/bVD3ptOl+\ne3M4xpxcZR45aPif3vYaTYtxFYlmwYewzrCK1HaQnyespm+auuDJAgMBAAE=\n-----END RSA PUBLIC KEY-----\n'
+PRIVATE_KEY = '-----BEGIN RSA PRIVATE KEY-----\nMIICYAIBAAKBgQCBmM2OWbAQPBnobAzk4nJQ8aEDobcMLxrjMohXdnOuC9jY3x6f\nlPOCnSJLGyDdAxvYGgi+jJeYVz3pknsvBii4vYcIJ15Bd4GJ07c3epCiiRsNMw85\nbYnlIGRYo2GmXVeASRcSz/aew8FbLtV0p9snIQ1N9pe5sXXX9aQgIf0hwwIDAQAB\nAoGAeqNhEi5pYFOfqMRnR0nLKDIgTtF/6TXCWfH999aODcwEPuaVkipgbd/JDg30\nAXHprYylbbyZ0H3uhtQouueBFWbUWIiyQZDljFWlpHuEdvRDRtfLwUqZ6qw80fIB\n0Sq5ex3qvnA6HAn0Zdw8Khr6D7x+X4eilRrJRtdebmc7/VECRQCwoPpHnx1YbLrm\nNG1jpnA5XaIc5uRxO9TUO47ahuwprEnzAMJW2QJ3+xEINfLP4AGCPTWqcLrOYjWr\n+Pz1Wz66HgWQjQI9ALvVXenM/GdjKFhse99/xsXrev88/+ylOWcwikRQlJZuleMm\nzhEvR4WEReQ6KYxL0yaAngk2WI9lYZWvjwJEWzBQ5qcsNFm2SGFq1Fa6e7NunbNK\n33b/Uy8IeqPLy1wKta1/p+zTzHPPgEix+kZxIPdO/JbEqwajJQ0gM+AOy3Hyd4UC\nPDEltxkB5dk3fMsGN7NXP69x2hEG6QAGi2qQrN0LKJXkAZwZ/zlH4bLx1UfOYCix\nfmJIrRFEAxAiOtJryQJFAIngwgxTiS5SyN/n847FxvJ0nmwuAgsb4ydHuIzzM27I\nERI0ILdCgdF8WLXnqutwCc1CQd6hZggds018OR5IvCIWU6p6\n-----END RSA PRIVATE KEY-----\n'

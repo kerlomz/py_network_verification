@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Verification {
+    rpc verification (VerificationRequest) returns (VerificationResult) {}
+}
+
+message VerificationRequest {
+    string key = 1;
+}
+
+message VerificationResult {
+    string result = 1;
+}

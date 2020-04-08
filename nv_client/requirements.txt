@@ -1,0 +1,13 @@
+pycrypto
+grpcio
+grpcio_tools
+wmi
+pywin32
+rsa
+pyyaml
+pyinstaller
+psutil
+fastapi
+uvicorn
+Cython
+pillow
